@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Study smarter with Quiet Digital Studio. Explore free study planners, focus timers, flashcards, quizzes, grade calculators and revision tools.">
+  <title>Quiet Digital Studio | Free Study Planner & Study Tools</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #253047;
+      line-height: 1.6;
+    }
+    header {
+      background: #ffffff;
+      padding: 22px 16px;
+      text-align: center;
+      border-bottom: 1px solid #e4e8f0;
+    }
+    header h1 { margin: 0; color: #465db5; }
+    header p { margin: 5px 0 0; color: #657087; }
+    main { max-width: 720px; margin: 32px auto; padding: 0 16px; }
+    .card {
+      background: white;
+      padding: 24px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 18px rgba(30, 45, 80, 0.06);
+    }
+    h2 { margin-top: 0; }
+    label { display: block; margin: 16px 0 6px; font-weight: bold; }
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccd3e0;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      margin-top: 22px;
+      padding: 13px;
+      border: 0;
+      border-radius: 9px;
+      background: #465db5;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover { background: #354992; }
+    #result {
+      margin-top: 20px;
+      padding: 16px;
+      background: #eef1ff;
+      border-radius: 10px;
+      display: none;
+    }
+    .note { color: #657087; font-size: 14px; }
+    footer { text-align: center; padding: 24px; color: #657087; }
+    a { color: #465db5; }
+/* Soft navigation animations */
+.qds-shell .qds-links a {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+@media (hover: hover) {
+  .qds-shell .qds-links a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(127, 105, 155, 0.15);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .qds-shell .qds-links a {
+    transition: none;
+  }
+  .qds-shell .qds-links a:hover {
+    transform: none;
+  }
+}
+  </style>
+<style>
+/* Shared Quiet Digital Studio navigation */
+.qds-shell{box-sizing:border-box;width:min(1120px,calc(100% - 36px));max-width:none;margin:0 auto 18px;padding:24px 0 18px;border-bottom:1px solid #e5dce9;font:14px/1.5 "Segoe UI",sans-serif;text-align:left;color:#373441}
+.qds-shell .qds-home{display:inline-flex;align-items:center;gap:10px;color:#554461;text-decoration:none;font-weight:700;font-size:15px;letter-spacing:-.02em}
+.qds-shell .qds-mark{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;border:1px solid #e0d6e8;background:#eee5f4;font-size:24px;color:#7f699b}
+.qds-shell .qds-tag{color:#827489;font-size:11px;letter-spacing:.09em;margin-left:auto}
+.qds-shell .qds-top{display:flex;align-items:center;gap:15px;margin-bottom:17px}
+.qds-shell .qds-links{display:flex;gap:7px;flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px}
+.qds-shell .qds-links a{flex-shrink:0}
+.qds-shell .qds-links a{display:inline-flex;align-items:center;justify-content:center;min-height:39px;padding:8px 13px;color:#6e6178;border:1px solid transparent;border-radius:11px;text-decoration:none;font:600 12px/1.4 "Segoe UI",sans-serif;letter-spacing:0;background:transparent}
+.qds-shell .qds-links a:hover{background:#f0e8f6;border-color:#e5d9ed;color:#66537d}
+.qds-shell .qds-links a[aria-current="page"]{background:#7f699b;border-color:#7f699b;color:white;box-shadow:0 4px 12px #7f699b18}
+.qds-shell a:focus-visible{outline:3px solid #b49bce;outline-offset:3px}
+@media(max-width:620px){.qds-shell{padding-top:18px;margin-bottom:10px}.qds-shell .qds-tag{display:none}.qds-shell .qds-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.qds-shell .qds-links a{font-size:11px;padding:8px 5px;background:#ffffff80;border-color:#eee7f0}.qds-shell .qds-top{margin-bottom:12px}}
+@media print{.qds-shell{display:none}}
+
+/* Bring the original page into the studio palette. */
+body{background:radial-gradient(ellipse at 0 10%,#e9dcf5,transparent 38%),radial-gradient(ellipse at 100% 60%,#e5f0e6,transparent 38%),#faf8f5;color:#373441;font-family:"Segoe UI",sans-serif}
+body>header{background:transparent;border:0;padding:26px 20px 12px;text-align:center}
+body>header h1{color:#66537d;font-family:Georgia,serif;font-weight:400;font-size:clamp(34px,5vw,54px);letter-spacing:-.035em;line-height:1.15}
+body>header p{color:#716978}
+h2,h3{color:#554461;font-family:Georgia,serif;font-weight:400}
+main .card,main section{border-radius:22px;border:1px solid #fff;box-shadow:0 14px 40px #4e385f08}
+input{border-color:#e2d7e8;border-radius:11px}input:focus-visible,button:focus-visible{outline:3px solid #b49bce;outline-offset:3px}
+button,.button{background:#7f699b;color:#fff;border-radius:11px}button:hover,.button:hover{background:#66537d}
+a{color:#66537d}#result{background:#f0eaf5}.note,footer{color:#716978}
+</style>
+</head>
+<body>
+<div class="qds-shell" role="banner"><div class="qds-top"><a class="qds-home" href="study-dashboard.html"><span class="qds-mark" aria-hidden="true">✧</span>Quiet Digital Studio</a><span class="qds-tag">A little focus. A little growth.</span></div><nav class="qds-links" aria-label="All study tools"><a href="study-dashboard.html">Dashboard</a><a href="index.html" aria-current="page">Study Planner</a><a href="focus-timer.html">Focus Timer</a><a href="flashcards.html">Flashcards & Quiz</a><a href="grade-calculator.html">Grade Calculator</a><a href="revision-streak.html">Revision Streak</a><a href="my-garden.html">My Garden</a><a href="exam-study-guide.html">Exam Guide</a><a href="about.html">About &amp; Contact</a></nav></div>
+
+  <header>
+    <h1>Study Planner</h1>
+    <p>A simple tool to organise your revision.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Create your study plan</h2>
+      <p>Enter your available time to calculate a manageable revision schedule.</p>
+
+      <form id="planner">
+        <label for="days">Days until your exam</label>
+        <input id="days" type="number" min="1" max="365" value="14" required>
+
+        <label for="topics">Number of topics to revise</label>
+        <input id="topics" type="number" min="1" max="500" value="10" required>
+
+        <label for="hours">Study hours available per day</label>
+        <input id="hours" type="number" min="0.5" max="16" step="0.5" value="2" required>
+
+        <button type="submit">Calculate my study plan</button>
+      </form>
+
+      <div id="result" aria-live="polite"></div>
+      <p class="note">This is a suggested schedule. Adjust it to suit your needs and remember to take breaks.</p>
+    </section>
+
+<section class="card" style="
+  background: linear-gradient(135deg, #f4eafa, #f1f7f0);
+  border: 1px solid #e6dced;
+  border-radius: 24px;
+  padding: 34px 26px;
+  text-align: center;
+  box-shadow: 0 12px 35px rgba(98, 75, 120, 0.08);
+">
+
+  <div style="
+    font-size: 42px;
+    margin-bottom: 12px;
+  ">🌱</div>
+
+  <p style="
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    color: #8b77a1;
+    font-weight: bold;
+    margin-bottom: 10px;
+  ">
+    YOUR LITTLE GROWTH GARDEN
+  </p>
+
+  <h2 style="
+    font-family: Georgia, serif;
+    color: #58476b;
+    font-size: 29px;
+    margin-bottom: 12px;
+  ">
+    Focus. Grow. Bloom.
+  </h2>
+
+  <p style="
+    color: #70667a;
+    max-width: 460px;
+    margin: 0 auto 24px;
+    line-height: 1.8;
+  ">
+    Turn your study sessions into something beautiful.
+    Stay focused with our peaceful timer and watch
+    your little plant grow as you make progress.
+  </p>
+
+  <a href="focus-timer.html" style="
+    display: inline-block;
+    background: #80699b;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 8px 22px rgba(128, 105, 155, 0.22);
+  ">
+    🌿 Start Focusing →
+  </a>
+
+  <p style="
+    color: #94899c;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-bottom: 0;
+  ">
+    Every small step helps something beautiful grow.
+  </p>
+
+</section>
+
+    <section class="card">
+      <h2>How to use your plan</h2>
+      <p>1. List the topics you need to revise.</p>
+      <p>2. Start with the topics you find most difficult.</p>
+      <p>3. Practise questions and review your mistakes.</p>
+      <p>4. Leave time to review everything before your exam.</p>
+    </section>
+
+    <section class="card">
+      <h2>About this tool</h2>
+      <p>This free calculator helps students estimate their available revision time and divide topics into manageable sessions. It is a planning aid, not a guarantee of exam results.</p>
+    </section>
+
+    <section class="card">
+      <h2>Privacy</h2>
+      <p>This calculator processes your entries in your browser. It does not send them to a server or save them.</p>
+      <p><a href="privacy.html">Read our privacy information</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Free Study Planner</p>
+    <p><a href="mailto:quietdigitstudio@gmail.com">Contact</a></p>
+  </footer>
+
+  <script>
+    document.getElementById("planner").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const days = Number(document.getElementById("days").value);
+      const topics = Number(document.getElementById("topics").value);
+      const hours = Number(document.getElementById("hours").value);
+      const result = document.getElementById("result");
+
+      if (days < 1 || topics < 1 || hours <= 0 ||
+          !Number.isFinite(days) || !Number.isFinite(topics) ||
+          !Number.isFinite(hours)) {
+        result.style.display = "block";
+        result.textContent = "Please enter valid numbers in all fields.";
+        return;
+      }
+
+      const topicsPerDay = topics / days;
+      const totalHours = days * hours;
+      const hoursPerTopic = totalHours / topics;
+
+      result.style.display = "block";
+      result.replaceChildren();
+
+      const heading = document.createElement("h3");
+      heading.textContent = "Your suggested revision plan";
+      result.appendChild(heading);
+
+      const lines = [
+        "Total available study time: " + totalHours.toFixed(1) + " hours",
+        "Average topics per day: " + topicsPerDay.toFixed(1),
+        "Available time per topic: " + hoursPerTopic.toFixed(1) + " hours"
+      ];
+
+      lines.forEach(function(line) {
+        const p = document.createElement("p");
+        p.textContent = line;
+        result.appendChild(p);
+      });
+
+      const advice = document.createElement("p");
+      advice.textContent = topics > days
+        ? "You have more topics than days. Try combining shorter topics and prioritising difficult ones."
+        : "You have at least one day per topic on average. Use some sessions for practice questions and review.";
+      result.appendChild(advice);
+    });
+  </script>
+
+<section style="max-width:760px;margin:40px auto;padding:24px;font-family:Arial,sans-serif;line-height:1.7;">
+  <h2>Free Exam Study Guide</h2>
+  <p>Learn how to plan your revision, remember what you study, practise exam questions and prepare for exams at different educational levels.</p>
+  <a href="exam-study-guide.html" style="display:inline-block;padding:12px 18px;background:#655078;color:white;text-decoration:none;border-radius:8px;">Read the Study Guide</a>
+</section>
+</body>
+</html>
